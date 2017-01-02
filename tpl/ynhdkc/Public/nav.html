@@ -1,0 +1,47 @@
+<nav class="navbar navbar-default navbar-sticky">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> -->
+				<button type="button" class="navbar-toggle" data-toggle="dropdown"><span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                </button>
+                <?php
+			$effected_id="";
+		  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
+		  	$foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>";
+		  	$ul_class="" ;
+		  	$li_class="" ;
+		  	$style="dropdown-menu";
+		  	$showlevel=6;
+		  	$dropdown='dropdown';
+		  	echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+					?>
+  <!-- <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li class="divider"></li>
+    <li><a href="#">Separated link</a></li>
+  </ul> -->
+			</div>
+
+			<div class="navbar-collapse collapse">
+					<?php
+			$effected_id="";
+		  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
+		  	$foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>";
+		  	$ul_class="" ;
+		  	$li_class="" ;
+		  	$style="nav navbar-nav";
+		  	$showlevel=6;
+		  	$dropdown='dropdown';
+		  	echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+					?>
+				<!-- <ul class="nav navbar-nav">
+					<li class="active"><a href="index.html">首页</a></li>
+					<li><a href="blog.html">新闻资讯</a></li>
+					<li><a href="about.html">关于我们</a></li>
+				</ul> -->
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav>
+</header>

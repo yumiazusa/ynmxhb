@@ -1,0 +1,43 @@
+<style>
+#container{margin:0 auto;width:920px;}
+.content{margin-top: 30px;}
+.body { font-size: 98%;line-height:1.6;color: #666666; font-family:"微软雅黑";text-align: center;}
+.body h1 {  font-size: 60px; line-height: 1;text-transform: uppercase;letter-spacing: -6px;margin-bottom: 10px; margin-top:0; }
+.body h4 {  font-size: 60px; line-height: 1;text-transform: uppercase;letter-spacing: -6px; margin-bottom: 70px;}
+.masked{
+	background: url(__TMPL__Public/assets/images/未标题-1.png) repeat, white;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation-name: masked-animation;
+	-webkit-animation-duration: 40s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes masked-animation {
+	0% {background-position: left bottom;}
+	100% {background-position: right bottom;}
+}
+</style>
+<tc_include file="Public:head" />
+<tc_include file="Public:nav" />
+<main id="main">
+
+	<div class="container body">
+	<div id="container">
+	<div class="content">
+		<div class= "masked">
+		<h1>404 error!</h1>
+		<h4>对不起，没找到您要访问的页面~</h4>
+		</div>
+	</div>
+	</div>
+	</div>	<!-- /container -->
+
+</main>
+<tc_include file="Public:footer"/>
+<tc_include file="Public:scripts"/>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<tc_include file=":config"/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"    content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<meta name="author"      content="Reagan">
+	
+	<title>{$site_seo_title}</title>
+
+	<link rel="shortcut icon" href="__TMPL__Public/assets/images/123.jpg">
+	
+	<!-- Bootstrap -->
+	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<!-- Icons -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Alice|Open+Sans:400,300,700">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="__TMPL__Public/assets/css/styles.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="__TMPL__Public/assets/css/CSSreset.min.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="__TMPL__Public/assets/css/als_demo.css" />
+	<!--[if lt IE 9]> <script src="assets/js/html5shiv.js"></script> <![endif]-->
+<style>
+@font-face {font-family: 'iconfont';
+    src: url('iconfont.eot'); /* IE9*/
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('iconfont.woff') format('woff'), /* chrome、firefox */
+    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{font-family:"iconfont";
+font-size:16px;font-style:normal;}
+.navbar-default .navbar-toggle {
+    border-color: #ddd;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left:65%;
+    right:0;
+    padding: 5px 0;
+    margin: 2px 0 0;
+}
+
+#head img.img-circle {
+    display: block;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    border: 9px solid #286D2A;
+    margin: 0 auto;
+}
+
+
+
+</style>
+
+
+
+</head>
+<body class="{$home}">
+
+<header id="header">
+	<div id="head" class="parallax" parallax-speed="2">
+		<h1 id="logo" class="text-center">
+			<if condition="$img eq 1">
+			<img class="img-circle" src="__TMPL__Public/assets/images/guy2.jpg" alt=""></if>
+			<span class="title">麦祥环保&nbsp;环保科技</span>
+			<span class="tagline"><b style="font-size: 30px; color:#000000">城市综合体·生活垃圾解决方案</b><br><br>
+				<a href="" style="font-size: 23px;color:#902C2C">anthony.russel42@example.com</a></span>
+		</h1>
+	</div>
