@@ -136,15 +136,29 @@ $('.nav-side li').click(function(){
     var infoWindow = new BMap.InfoWindow("云南麦祥环保设备有限公司驻昆总部<br/><span class=''>地址:云南省昆明市北京路金江花园E-28栋1002室</span>"); 
     marker.openInfoWindow(infoWindow);
 
-var index ="{:I('get.index')}";
-window.onload = function(){
-    if(index){
-    $('.maincontent').hide();
-    $('.maincontent').eq(index).show();
-    $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
-    $('.nav-side li').eq(index).removeClass("").addClass("active");
+var index = window.location.hash;
+// window.onload = function(){
+//     if(index){
+//     $('.maincontent').hide();
+//     $('.maincontent').eq(index).show();
+//     $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
+//     $('.nav-side li').eq(index).removeClass("").addClass("active");
+//     }
+// }
+
+$(document).ready(function(){
+    if(index == '#frontend'){
+        $('.maincontent').hide();
+        $('.maincontent').eq(1).show();
+        $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
+        $('.nav-side li').eq(1).removeClass("").addClass("active");
+    }else if(index == '#backend'){
+        $('.maincontent').hide();
+        $('.maincontent').eq(2).show();
+        $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
+        $('.nav-side li').eq(2).removeClass("").addClass("active");
     }
-}
+})
 </script>
 </body>
 </html>
