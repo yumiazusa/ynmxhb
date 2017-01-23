@@ -47,13 +47,17 @@ font-size:16px;font-style:normal;}
     margin: 2px 0 0;
 }
 
-#head img.img-circle {
+#head div.img-circle {
     display: block;
-    width: 140px;
-    height: 140px;
+    width: 65px;
+    height: 65px;
     overflow: hidden;
     border: 0;
     margin: 0 auto;
+}
+
+.home #head {
+    padding: 120px 0;
 }
 
 
@@ -69,9 +73,10 @@ font-size:16px;font-style:normal;}
 	<div id="head" class="parallax" parallax-speed="2">
 		<h1 id="logo" class="text-center">
 			<if condition="$img eq 1">
-			<img class="img-circle" src="__TMPL__Public/assets/images/guy4.jpg"  alt=""></if>
+				<div class='img-circle'></div>
+			<!-- <img class="img-circle" src="__TMPL__Public/assets/images/guy4.jpg"  alt=""> --></if>
 			<span class="title">麦祥环保设备</span>
-			<span class="tagline"><b style="font-size: 30px; color:#000000">
+			<span class="tagline"><b style="font-size: 35px; color:#000000">
 				<div class="row">
 				<div class="col-sm-12 col-md-12" style="line-height: 120%">城市综合体·生活垃圾解决方案</div>
 			    </div>
