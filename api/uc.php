@@ -172,6 +172,11 @@ class uc_note {
 		$data = array();
 		if(is_array($post)) {
 			foreach($post as $k => $v) {
+				//dz uc-key修改开始
+      if(substr($v['findpattern'], 0, 1) != '/' || substr($v['findpattern'], -3) != '/is') {
+         $v['findpattern'] = '/' . preg_quote($v['findpattern'], '/') . '/is';
+      }
+				//end  修改结束   
 				$data['findpattern'][$k] = $v['findpattern'];
 				$data['replace'][$k] = $v['replacement'];
 			}
@@ -200,8 +205,14 @@ class uc_note {
 		if(!API_UPDATEAPPS) {
 			return API_RETURN_FORBIDDEN;
 		}
-		$UC_API = $post['UC_API'];
-		
+		//$UC_API = $post['UC_API'];
+		//dz uc-key修改开始
+        $UC_API = '';
+        if($post['UC_API']) {
+            $UC_API = str_replace(array('\'', '"', '\\', "\0", "\n", "\r"), '', $post['UC_API']);
+            unset($post['UC_API']);
+        }
+		//end修改结束
 		//note 写 app 缓存文件
 		$cachefile = DISCUZ_ROOT.'../data/uc_cache/apps.php';
 		$fp = fopen($cachefile, 'w');
