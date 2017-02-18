@@ -1,0 +1,26 @@
+<tc_include file="Public:head" />
+		<ol class="breadcrumb">
+		  <li><a href="{:leuu('/')}">麦祥首页</a></li>
+		  <li><a href="javascript:history.go(-1);">麦祥咨询中心</a></li>
+		</ol>
+<div class="main"><!-- start main -->
+<div class="container">
+	<div class="row details"><!-- start details -->
+		<h4>{$post_title}</h4>
+		<span><time class="entry-date published" date="{$vo.post_date}">{$post_date}</time></span>
+
+		<p class="para">{$post_content}</p>
+		<div class="read_more2">
+			<a href="javascript:history.go(-1);"><button class="btn_style">更多资讯</button></a>
+		</div>
+	</div><!-- end  details -->
+</div>
+</div>
+<tc_include file="Public:footer"/>
+<tc_include file="Public:scripts"/>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

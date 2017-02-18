@@ -1,60 +1,43 @@
 <tc_include file="Public:head" />
 		<ol class="breadcrumb">
-		  <li><a href="index.html">Home</a></li>
-		  <li class="active">Blog</li>
+		  <li><a href="{:leuu('/')}">麦祥首页</a></li>
+		  <li class="active">麦祥咨询中心</li>
 		</ol>
 <div class="main"><!-- start main -->
 <div class="container">
 	<div class="blog"><!-- start blog -->
+
+		<php>
+         $lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",5);
+        </php>
+        <volist name="lists['posts']" id="vo">
+        <php>
+         $smeta=json_decode($vo['smeta'], true);
+        </php>
 		<div class="row">
 			<div class="col-md-8 blog_left">
-				<a href="single-page.html"><img src="images/blog_pic1.jpg" alt="" class="blog_img img-responsive"/></a>
-				<h4><a href="single-page.html">Lorem Ipsum is simply dummy text of the printing and typesetting industry </a></h4>
-				<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</p>
+				<h4><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></h4>
+				<if condition="!empty($smeta['thumb'])">
+                  <a href="{:leuu('article/index',array('id'=>$vo['tid']))}"><img src="{:sp_get_asset_upload_path($smeta['thumb'])}" alt="{$vo.post_title}" class="blog_img img-responsive"/></a>
+                </if>
+				<span><time class="entry-date published" date="{$vo.post_date}">{$vo.post_date}</time></span>
+				<p class="para">{$vo.post_excerpt|msubstr=0,70}</p>
 				<div class="read_more">
-					<a href="single-page.html"><button class="btn_style">view more</button></a>
-				</div>
-				<a href="single-page.html"><img src="images/blog_pic1.jpg" alt="" class="blog_img1 img-responsive"/></a>
-				<h4><a href="single-page.html">Lorem Ipsum is simply dummy text of the printing and typesetting industry </a></h4>
-				<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing</p>
-				<div class="read_more">
-					<a href="single-page.html"><button class="btn_style">view more</button></a>
-				</div>
-			</div>
-			<div class="col-md-4 blog_right">
-				<h4>Ads 125 x 125</h4>
-				<ul class="ads_nav list-unstyled">
-					<li><a href="#"><img src="images/ads_pic.jpg" alt=""> </a></li>
-					<li><a href="#"><img src="images/ads_pic.jpg" alt=""> </a></li>
-					<li><a href="#"><img src="images/ads_pic.jpg" alt=""> </a></li>
-					<li><a href="#"><img src="images/ads_pic.jpg" alt=""> </a></li>
-					<div class="clearfix"></div>
-				</ul>
-				<ul class="tag_nav list-unstyled">
-					<h4>tags</h4>
-						<li><a href="#">art</a></li>
-						<li><a href="#">awesome</a></li>
-						<li><a href="#">classic</a></li>
-						<li><a href="#">photo</a></li>
-						<li><a href="#">wordpress</a></li>
-						<li><a href="#">videos</a></li>
-						<li><a href="#">standard</a></li>
-						<li><a href="#">gaming</a></li>
-						<li><a href="#">photo</a></li>
-						<li><a href="#">music</a></li>
-						<li><a href="#">data</a></li>
-						<div class="clearfix"></div>
-				</ul>
-				<div class="news_letter">
-					<h4>news letter</h4>
-						<form>
-							<input type="text" placeholder="Your email address">
-							<input type="submit" value="subscribe">
-						</form>
+					<a href="{:leuu('article/index',array('id'=>$vo['tid']))}"><button class="btn_style xiangxi">阅读详细...</button></a>
 				</div>
 			</div>
 			<div class="clearfix"></div>
 		</div>
+		</volist>
+		<div calss='pagenum'>
+		 <ul class="pagination">
+                     {$lists['page']}
+                </ul>
+        </div>
+
+		
+
+
 	</div><!-- end blog -->
 </div>
 </div>
