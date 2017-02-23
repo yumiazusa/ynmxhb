@@ -1,18 +1,29 @@
+<style>
+.map{
+    width:100%;
+    height:250px;
+}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=UVLq77yrISccQbi4gEXZw4kR"></script>
 <tc_include file="Public:head" />
 <div class="head-nav2">
 		<ol class="breadcrumb">
-		  <li><a href="{:leuu('/')}">公司简介</a></li>
-		  <li><a href="{:leuu('/')}">核心技术</a></li>
-		  <li class='none'><a href="{:leuu('/')}">产品服务</a></li>
-		  <li><a href="{:leuu('/')}">项目展示</a></li>
-		  <li><a href="{:leuu('/')}">联系我们</a></li>
+		  <li><a href="#address">公司简介</a></li>
+		  <li><a href="#frontend">核心技术</a></li>
+		  <li><a href="#backend">产品服务</a></li>
+		  <li><a href="#product">项目展示</a></li>
+		  <li><a href="#contact">联系我们</a></li>
 		</ol>
 </div>
 
 <div class="main"><!-- start main -->
-<div class="container">
-	<div class="row about">	<!-- start about -->
-		<div class="col-md-5 img_style">
+<div class="container aboutdiv">
+	<div class="row maincontent about active">	
+
+			    	 		<div class="map" id="mapCanvas">
+					   		</div>
+		<!-- start about -->
+		<!-- <div class="col-md-5 img_style">
 			<img src="images/about_pic.jpg" alt=""  class="img-responsive"/>
 		</div>
 		<div class="col-md-7">
@@ -23,12 +34,45 @@
 				<a href="single-page.html"><button class="btn_style">view more</button></a>
 			</div>
 		</div>
-		<div class="clearfix"></div>
-		<div class="about_p">
-		 	<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry., Lorem Ipsum  dummy text ever since dummy text of the printing and usings 1500s,Duis aute irure dolor in reprehenderit in voluptate velit esse when an,Lorem Ipsum has been the industry's standard dummy text ever since dummy text of the printing and usings 1500s, </p>
-			<p class="para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since dummy text of the printing and usings 1500s,Duis aute irure dolor in reprehenderit in voluptate velit Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since dummy text of the printing and usings 1500s,Duis aute irure dolor in reprehenderit in voluptate velit</p>
-			<p class="para">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+		<div class="clearfix"></div> -->
+	</div><!-- end about -->
+
+	<div class="row maincontent">	<!-- start about -->
+		<div class="col-md-5 img_style">
+			<img src="images/about_pic.jpg" alt=""  class="img-responsive"/>
 		</div>
+		<div class="col-md-7">
+		    2
+		</div>
+		<div class="clearfix"></div>
+	</div><!-- end about -->
+
+	<div class="row maincontent">	<!-- start about -->
+		<div class="col-md-5 img_style">
+			<img src="images/about_pic.jpg" alt=""  class="img-responsive"/>
+		</div>
+		<div class="col-md-7">
+		    3
+		</div>
+		<div class="clearfix"></div>
+	</div><!-- end about -->
+	<div class="row maincontent">	<!-- start about -->
+		<div class="col-md-5 img_style">
+			<img src="images/about_pic.jpg" alt=""  class="img-responsive"/>
+		</div>
+		<div class="col-md-7">
+		    4
+		</div>
+		<div class="clearfix"></div>
+	</div><!-- end about -->
+	<div class="row maincontent">	<!-- start about -->
+		<div class="col-md-5 img_style">
+			<img src="images/about_pic.jpg" alt=""  class="img-responsive"/>
+		</div>
+		<div class="col-md-7">
+		    5
+		</div>
+		<div class="clearfix"></div>
 	</div><!-- end about -->
 </div>
 </div>
@@ -38,6 +82,41 @@
 <tc_include file="Public:footer"/>
 <tc_include file="Public:scripts"/>
 <script type="text/javascript">
+$('.breadcrumb li').click(function(){
+    var i = $(this).index();
+    $('.maincontent').hide();
+    $('.maincontent').eq(i).show();
+    // $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
+    // $(this).removeClass("").addClass("active");
+});
+
+var map = new BMap.Map("mapCanvas");
+    var point = new BMap.Point(102.753475,25.108263);
+    map.centerAndZoom(point, 15);
+    var marker = new BMap.Marker(point);
+    map.addControl(new BMap.NavigationControl());  
+    map.addControl(new BMap.ScaleControl());  
+    map.addControl(new BMap.OverviewMapControl()); 
+    map.addOverlay(marker);
+    var infoWindow = new BMap.InfoWindow("云南麦祥环保设备有限公司驻昆总部<br/>地址:云南省昆明市北京路金江花园E-28栋1002室"); 
+    marker.openInfoWindow(infoWindow);
+
+
+var index = window.location.hash;
+
+$(document).ready(function(){
+    if(index == '#frontend'){
+        $('.maincontent').hide();
+        $('.maincontent').eq(1).show();
+        // $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
+        // $('.nav-side li').eq(1).removeClass("").addClass("active");
+    }else if(index == '#backend'){
+        $('.maincontent').hide();
+        $('.maincontent').eq(2).show();
+        // $('.nav-side li').removeClass("active").addClass("");//切换按钮样式
+        // $('.nav-side li').eq(2).removeClass("").addClass("active");
+    }
+})
 
 </script>
 
